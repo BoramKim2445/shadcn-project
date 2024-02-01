@@ -1,6 +1,5 @@
 'use client';
 
-import { Chart } from '@/app/page';
 import ChartCard from './ChartCard';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 

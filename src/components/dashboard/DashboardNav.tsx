@@ -25,6 +25,6 @@ export default function DashboardNav() {
 }
 
 const SampleContent = [
-  { id: 1, href: '', title: 'sample1' },
-  { id: 2, href: '', title: 'sample2' },
+  { id: 1, href: '/dashboard', title: 'sample1' },
+  { id: 2, href: '/dashboard', title: 'sample2' },
 ];

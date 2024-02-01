@@ -1,3 +1,6 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { Button } from '../ui/button';
 import {
@@ -11,6 +14,15 @@ import {
 } from '../ui/dropdown-menu';
 
 export default function UserMenu() {
+  const router = useRouter();
+
+  const DropDownList = [
+    { id: 1, icon: '', value: 'Profile' },
+    { id: 2, icon: '', value: 'Billing' },
+    { id: 3, icon: '', value: 'Settings' },
+    { id: 4, icon: '', value: 'Log out', onClick: () => router.push('/') },
+  ];
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -34,17 +46,12 @@ export default function UserMenu() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           {DropDownList.map((item) => (
-            <DropdownMenuItem key={item.id}>{item.value}</DropdownMenuItem>
+            <DropdownMenuItem key={item.id} onClick={item?.onClick}>
+              {item.value}
+            </DropdownMenuItem>
           ))}
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );
 }
-
-const DropDownList = [
-  { id: 1, icon: '', value: 'Profile' },
-  { id: 2, icon: '', value: 'Billing' },
-  { id: 3, icon: '', value: 'Settings' },
-  { id: 4, icon: '', value: 'Log out' },
-];

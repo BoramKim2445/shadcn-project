@@ -22,10 +22,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${inter.className} bg-gray-white`}>
         <div className='m-0 box-border h-screen w-screen bg-gray-200 p-0'>
-          <div className='sticky flex h-full'>
-            <SideNav />
-            <div className='grow overflow-y-scroll'>{children}</div>
-          </div>
+          {children}
         </div>
       </body>
     </html>

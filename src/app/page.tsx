@@ -1,27 +1,19 @@
-import DragLayout from '@/components/dashboard/DragLayout';
-import SelectList from '@/components/dashboard/SelectList';
+import { Metadata } from 'next';
+import AuthTemplate from '@/components/auth/AuthTemplate';
 
-export interface Chart {
-  title: string;
-  data: string;
-  id: string;
-}
+export const metadata: Metadata = {
+  title: 'Authentication',
+  description: 'Authentication forms built using the components.',
+};
 
-async function getCharts(): Promise<Chart[]> {
-  const result = await fetch('http://localhost:4000/charts');
-
-  // await new Promise((resolve) => setTimeout(resolve, 3000));
-
-  return result.json();
-}
-
-export default async function HomePage() {
-  const charts = await getCharts();
-
+export default function LoginPage() {
   return (
-    <main className='w-full my-12'>
-      <SelectList />
-      <DragLayout charts={charts} />
-    </main>
+    <>
+      <AuthTemplate
+        title='Login'
+        description='Enter your email below to enter your account'
+        moveLink={{ label: 'Signin', href: '/signin' }}
+      />
+    </>
   );
 }
