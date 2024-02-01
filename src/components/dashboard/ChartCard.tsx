@@ -25,9 +25,21 @@ export default function ChartCard({ chart }: ChartCardProps) {
             </label>
           </div>
           <CardDescription className='flex gap-2 mr-8'>
-            <CommentIcon className='w-5 cursor-pointer' />
-            <DownLoadIcon className='w-5 cursor-pointer' />
-            <ChartSettingIcon className='w-5 cursor-pointer' />
+            <CommentIcon
+              width='1rem'
+              height='1rem'
+              className='cursor-pointer'
+            />
+            <DownLoadIcon
+              width='1rem'
+              height='1rem'
+              className='cursor-pointer'
+            />
+            <ChartSettingIcon
+              width='1rem'
+              height='1rem'
+              className='cursor-pointer'
+            />
           </CardDescription>
         </CardHeader>
         <CardContent className='flex-grow  bg-gray-border p-2'>

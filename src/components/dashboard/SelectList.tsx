@@ -9,27 +9,27 @@ export default function SelectList() {
   return (
     <div className='p-2 flex justify-end gap-3'>
       <SelectBox
-        icon={<AddIcon className='w-5 h-4' />}
+        icon={<AddIcon width='1rem' height='1rem' />}
         label='추가하기'
         list={SampleList}
       />
       <SelectBox
-        icon={<DeleteIcon className='w-5 h-4' />}
+        icon={<DeleteIcon width='1rem' height='1rem' />}
         label='삭제하기'
         list={SampleList}
       />
       <SelectBox
-        icon={<ShareIcon className='w-5 h-4' />}
+        icon={<ShareIcon width='1rem' height='1rem' />}
         label='공유하기'
         list={SampleList}
       />
       <SelectBox
-        icon={<ExportIcon className='w-5 h-4' />}
+        icon={<ExportIcon width='1rem' height='1rem' />}
         label='내려받기'
         list={SampleList}
       />
       <SelectBox
-        icon={<EditIcon className='w-5 h-4' />}
+        icon={<EditIcon width='1rem' height='1rem' />}
         label='수정하기'
         list={SampleList}
       />
