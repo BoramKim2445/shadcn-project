@@ -16,7 +16,7 @@ export default function NavContent({
       <div className='pb-4 px-2 flex items-center justify-between border-b border-gray-border'>
         {title}
         <button onClick={closeNav}>
-          <ArrowLeftIcon width='1rem' height='1rem' />
+          <ArrowLeftIcon width='0.6rem' height='0.6rem' />
         </button>
       </div>
       {content}

@@ -35,7 +35,7 @@ export default function SideNav() {
           <Button
             variant='ghost'
             key={id}
-            className='p-0 bg-white'
+            className='py-1 px-2 bg-white'
             onClick={() => handleOpenNav(title, content)}
           >
             {icon}
@@ -59,31 +59,31 @@ export default function SideNav() {
 const NavList = [
   {
     id: 1,
-    icon: <HomeIcon width={'2.5rem'} height={'2.5rem'} />,
+    icon: <HomeIcon width={'1.2rem'} height={'1.2rem'} />,
     title: 'Home',
     content: <div>home</div>,
   },
   {
     id: 2,
-    icon: <DashboardIcon width={'2.5rem'} height={'2.5rem'} />,
+    icon: <DashboardIcon width={'1.2rem'} height={'1.2rem'} />,
     title: 'Dashboard',
     content: <DashboardNav />,
   },
   {
     id: 3,
-    icon: <HistoryIcon width={'2.5rem'} height={'2.5rem'} />,
+    icon: <HistoryIcon width={'1.2rem'} height={'1.2rem'} />,
     title: 'History',
     content: <div>history</div>,
   },
   {
     id: 4,
-    icon: <TalkIcon width={'2.5rem'} height={'2.5rem'} />,
+    icon: <TalkIcon width={'1.2rem'} height={'1.2rem'} />,
     title: 'Talk',
     content: <div>talk</div>,
   },
   {
     id: 5,
-    icon: <SearchIcon width={'2.5rem'} height={'2.5rem'} />,
+    icon: <SearchIcon width={'1.3rem'} height={'1.3rem'} />,
     title: 'Search',
     content: <div>search</div>,
   },
