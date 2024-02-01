@@ -100,6 +100,14 @@ const config = {
           transform: 'translateY(10px)',
         },
       },
+      'accordion-down': {
+        from: { height: '0' },
+        to: { height: 'var(--radix-accordion-content-height)' },
+      },
+      'accordion-up': {
+        from: { height: 'var(--radix-accordion-content-height)' },
+        to: { height: '0' },
+      },
     },
     animation: {
       'move-up': 'move-up 0.3s ease',
@@ -108,6 +116,8 @@ const config = {
       'fade-in-down': 'fade-in-down 0.3s ease-out',
       'fade-in-up': 'fade-in-up 0.3s ease-out',
       'fade-out-up': 'fade-out-up 0.3s ease-out',
+      'accordion-down': 'accordion-down 0.2s ease-out',
+      'accordion-up': 'accordion-up 0.2s ease-out',
     },
     extend: {
       colors: {
