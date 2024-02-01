@@ -1,7 +1,25 @@
-export default function NavContent() {
+import { ReactNode } from 'react';
+import ArrowLeftIcon from '../../assets/icon/view/dashboard/arrow-left.svg';
+interface NavContentProps {
+  title: string;
+  closeNav: () => void;
+  content?: ReactNode;
+}
+
+export default function NavContent({
+  title,
+  closeNav,
+  content,
+}: NavContentProps) {
   return (
-    <div className='w-[240px] border border-gray-border rounded-lg bg-white m-2 px-2 py-8 flex flex-col animate-fade-in-left'>
-      NavContent
+    <div className='w-9/10 h-full px-4 py-8 flex flex-col border border-gray-border rounded-lg bg-white animate-fade-in-left'>
+      <div className='pb-4 px-2 flex items-center justify-between border-b border-gray-border'>
+        {title}
+        <button onClick={closeNav}>
+          <ArrowLeftIcon width='1rem' height='1rem' />
+        </button>
+      </div>
+      {content}
     </div>
   );
 }

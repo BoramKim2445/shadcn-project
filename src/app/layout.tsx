@@ -21,12 +21,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.className} bg-gray-white`}>
-        <div className='flex'>
-          <SideNav />
-
-          <div className='flex flex-col flex-grow px-4'>
-            <Header />
-            {children}
+        <div className='m-0 box-border h-screen w-screen bg-gray-200 p-0'>
+          <div className='sticky flex h-full'>
+            <SideNav />
+            <div className='grow overflow-y-scroll'>{children}</div>
           </div>
         </div>
       </body>
