@@ -11,6 +11,9 @@ import { ReactNode, useState } from 'react';
 import NavContent from './NavContent';
 import DashboardNav from '../dashboard/DashboardNav';
 import { usePathname, useRouter } from 'next/navigation';
+import HistoryNavContent from '../menu/HistoryNavContent';
+import TalkNavContent from '../menu/TalkNavContent';
+import SearchNavContent from '../menu/SearchNavContent';
 
 export default function SideNav() {
   const [openNav, setOpenNav] = useState(false);
@@ -57,20 +60,20 @@ export default function SideNav() {
     {
       id: 3,
       icon: <HistoryIcon width={'1.2rem'} height={'1.2rem'} />,
-      title: 'History',
-      content: <div>history</div>,
+      title: '과거 내역 조회하기',
+      content: <HistoryNavContent />,
     },
     {
       id: 4,
       icon: <TalkIcon width={'1.2rem'} height={'1.2rem'} />,
       title: 'Talk',
-      content: <div>talk</div>,
+      content: <TalkNavContent />,
     },
     {
       id: 5,
       icon: <SearchIcon width={'1.3rem'} height={'1.3rem'} />,
       title: 'Search',
-      content: <div>search</div>,
+      content: <SearchNavContent />,
     },
   ];
 

@@ -13,13 +13,13 @@ export default function NavContent({
 }: NavContentProps) {
   return (
     <div className='w-9/10 h-full px-4 py-8 flex flex-col border border-gray-border rounded-lg bg-white animate-fade-in-left'>
-      <div className='pb-4 px-2 flex items-center justify-between border-b border-gray-border'>
+      <div className='pb-4  flex items-center justify-between font-semibold border-b border-gray-border'>
         {title}
-        <button onClick={closeNav}>
+        <button onClick={closeNav} className='pr-2'>
           <ArrowLeftIcon width='0.6rem' height='0.6rem' />
         </button>
       </div>
-      {content}
+      <div className='py-4 h-full'>{content}</div>
     </div>
   );
 }
