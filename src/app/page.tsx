@@ -8,12 +8,11 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <>
-      <AuthTemplate
-        title='Login'
-        description='Enter your email below to enter your account'
-        moveLink={{ label: 'Signin', href: '/signin' }}
-      />
-    </>
+    <AuthTemplate
+      title='Login'
+      description='Enter your email below to enter your account'
+      moveLink={{ label: 'Signin', href: '/signin' }}
+      buttonContent='login'
+    />
   );
 }

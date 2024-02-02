@@ -10,10 +10,11 @@ export const metadata: Metadata = {
 export default function SignInPage() {
   return (
     <AuthTemplate
-      title='SignIn'
+      title='Create an account'
       description='Enter your email below to signin your account'
       moveLink={{ label: 'Login', href: '/' }}
       moreDiscription={MoreDescription}
+      buttonContent='create acount'
     />
   );
 }

@@ -10,11 +10,15 @@ import LogoIcon from '../../assets/icon/goyoai_logo.svg';
 import { ReactNode, useState } from 'react';
 import NavContent from './NavContent';
 import DashboardNav from '../dashboard/DashboardNav';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function SideNav() {
   const [openNav, setOpenNav] = useState(false);
   const [navTitle, setNavTitle] = useState('');
   const [navContent, setNavContent] = useState<null | ReactNode>(null);
+
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleOpenNav = (title: string, content: ReactNode) => {
     setOpenNav(true);
@@ -24,6 +28,52 @@ export default function SideNav() {
 
   const handleCloseNav = () => setOpenNav(false);
 
+  const NavList = [
+    {
+      id: 1,
+      icon: (
+        <HomeIcon
+          width={'1.2rem'}
+          height={'1.2rem'}
+          fill={pathname.includes('/home') ? '#ffffff' : '#D6D6D6'}
+        />
+      ),
+      title: 'Home',
+      href: '/home',
+    },
+    {
+      id: 2,
+      icon: (
+        <DashboardIcon
+          width={'1.2rem'}
+          height={'1.2rem'}
+          fill={pathname.includes('/dashboard') ? '#ffffff' : '#D6D6D6'}
+        />
+      ),
+      title: 'Dashboard',
+      content: <DashboardNav />,
+      href: '/dashboard',
+    },
+    {
+      id: 3,
+      icon: <HistoryIcon width={'1.2rem'} height={'1.2rem'} />,
+      title: 'History',
+      content: <div>history</div>,
+    },
+    {
+      id: 4,
+      icon: <TalkIcon width={'1.2rem'} height={'1.2rem'} />,
+      title: 'Talk',
+      content: <div>talk</div>,
+    },
+    {
+      id: 5,
+      icon: <SearchIcon width={'1.3rem'} height={'1.3rem'} />,
+      title: 'Search',
+      content: <div>search</div>,
+    },
+  ];
+
   return (
     <>
       {/* mini nav */}
@@ -31,14 +81,25 @@ export default function SideNav() {
         <h2 className='mb-8'>
           <LogoIcon width='2rem' height='2rem' />
         </h2>
-        {NavList.map(({ id, title, icon, content }) => (
+        {NavList.map((item) => (
           <Button
             variant='ghost'
-            key={id}
-            className='py-1 px-2 bg-white'
-            onClick={() => handleOpenNav(title, content)}
+            key={item.id}
+            className={`py-1 px-2 bg-white ${
+              item.href && pathname.includes(item?.href)
+                ? 'bg-black hover:bg-black'
+                : ''
+            }`}
+            onClick={
+              item.content
+                ? () => handleOpenNav(item.title, item.content)
+                : () => {
+                    router.push(item?.href ?? '');
+                    handleCloseNav();
+                  }
+            }
           >
-            {icon}
+            {item.icon}
           </Button>
         ))}
       </nav>
@@ -55,36 +116,3 @@ export default function SideNav() {
     </>
   );
 }
-
-const NavList = [
-  {
-    id: 1,
-    icon: <HomeIcon width={'1.2rem'} height={'1.2rem'} />,
-    title: 'Home',
-    content: <div>home</div>,
-  },
-  {
-    id: 2,
-    icon: <DashboardIcon width={'1.2rem'} height={'1.2rem'} />,
-    title: 'Dashboard',
-    content: <DashboardNav />,
-  },
-  {
-    id: 3,
-    icon: <HistoryIcon width={'1.2rem'} height={'1.2rem'} />,
-    title: 'History',
-    content: <div>history</div>,
-  },
-  {
-    id: 4,
-    icon: <TalkIcon width={'1.2rem'} height={'1.2rem'} />,
-    title: 'Talk',
-    content: <div>talk</div>,
-  },
-  {
-    id: 5,
-    icon: <SearchIcon width={'1.3rem'} height={'1.3rem'} />,
-    title: 'Search',
-    content: <div>search</div>,
-  },
-];

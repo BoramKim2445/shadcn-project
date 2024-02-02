@@ -1,3 +1,4 @@
+import Title from '@/components/common/Title';
 import DragLayout from '@/components/dashboard/DragLayout';
 import SelectList from '@/components/dashboard/SelectList';
 
@@ -17,9 +18,10 @@ export default async function DashboardPage() {
   const charts = await getCharts();
 
   return (
-    <main className='w-full my-12'>
+    <>
+      <Title title='Dashboard' />
       <SelectList />
       <DragLayout charts={charts} />
-    </main>
+    </>
   );
 }

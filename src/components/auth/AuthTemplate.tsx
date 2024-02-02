@@ -1,14 +1,16 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '../ui/button';
-import UserAuthForm from '@/components/auth/UserAuthForm';
+
 import { ReactNode } from 'react';
+import AuthForm from './AuthForm';
 
 interface AuthTemplateProps {
   title: string;
   description?: string;
   moveLink?: { label: string; href: string };
-  moreDiscription?: ReactNode;
+  moreDiscription?: ReactNode | string;
+  buttonContent: string;
 }
 
 export default function AuthTemplate({
@@ -16,6 +18,7 @@ export default function AuthTemplate({
   description,
   moveLink,
   moreDiscription,
+  buttonContent,
 }: AuthTemplateProps) {
   return (
     <main className='container relative h-full flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0'>
@@ -42,7 +45,7 @@ export default function AuthTemplate({
             <h1 className='text-2xl font-semibold tracking-tight'>{title}</h1>
             <p className='text-sm text-muted-foreground'>{description}</p>
           </div>
-          <UserAuthForm title={title} />
+          <AuthForm buttonContent={buttonContent} />
           <p className='px-8 text-center text-sm text-muted-foreground'>
             {moreDiscription}
           </p>
