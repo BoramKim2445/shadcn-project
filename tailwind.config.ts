@@ -19,9 +19,9 @@ const config = {
     },
     colors: {
       white: '#ffffff',
-      black: '#000000',
+      black: '#272727',
       'black-text': '#222222',
-      blue: '#1fb6ff',
+      blue: '#1d67e9',
       purple: '#7e5bef',
       pink: '#ff49db',
       orange: '#ff7849',
@@ -36,6 +36,8 @@ const config = {
       gray: '#DDDDDD',
       'gray-light': '#ffffff',
       'gray-white': '#fbfbfb',
+      disabled: '#d6d6d6',
+      select: '#7D7D7D',
     },
     keyframes: {
       'move-up': {
