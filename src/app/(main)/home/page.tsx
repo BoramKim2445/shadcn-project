@@ -34,7 +34,7 @@ export default async function HomePage() {
     <>
       <Title title='Home' />
 
-      <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+      <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 '>
         <div className='col-span-1'>
           <BigCard
             title='오늘 매출실적이 좋아요'

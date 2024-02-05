@@ -1,7 +1,7 @@
 import DashboardDropdown from './DashboardDropdown';
 import DashboardIcons from '../ui/icons/DashboardIcons';
 
-export default function SelectList() {
+export default function DashboardDropDowns() {
   return (
     <div className='p-2 flex justify-end gap-3'>
       <DashboardDropdown

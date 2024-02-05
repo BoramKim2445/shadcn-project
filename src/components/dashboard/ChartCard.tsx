@@ -1,4 +1,4 @@
-import { Chart } from '@/app/page';
+import { Chart } from '../../app/(main)/dashboard/[id]/page';
 import { Card, CardContent, CardDescription, CardHeader } from '../ui/card';
 import { Checkbox } from '../ui/checkbox';
 

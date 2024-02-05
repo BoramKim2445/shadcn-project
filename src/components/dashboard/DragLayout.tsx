@@ -1,6 +1,7 @@
 'use client';
 
-import { Chart } from '@/app/(main)/dashboard/page';
+import { Chart } from '../../app/(main)/dashboard/[id]/page';
+import AddCard from './AddCard';
 import ChartCard from './ChartCard';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 
@@ -28,12 +29,19 @@ export default function DragLayout({ charts }: { charts: Chart[] }) {
       layouts={LAYOUTS}
       breakpoints={{ lg: 1200, sm: 768, xs: 480 }}
       cols={{ lg: 3, sm: 2, xs: 1 }}
+      isResizable={charts.length !== 0}
     >
-      {charts.map((item) => (
-        <div key={item.id}>
-          <ChartCard chart={item} />
+      {charts.length > 0 ? (
+        charts.map((item) => (
+          <div key={item.id}>
+            <ChartCard chart={item} />
+          </div>
+        ))
+      ) : (
+        <div key={'1'}>
+          <AddCard />
         </div>
-      ))}
+      )}
     </ResponsiveGridLayout>
   );
 }

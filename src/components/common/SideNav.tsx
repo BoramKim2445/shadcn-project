@@ -14,6 +14,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import HistoryNavContent from '../menu/HistoryNavContent';
 import TalkNavContent from '../menu/TalkNavContent';
 import SearchNavContent from '../menu/SearchNavContent';
+import TableIcon from '../../assets/icon/menu/table.svg';
 
 export default function SideNav() {
   const [openNav, setOpenNav] = useState(false);
@@ -74,6 +75,18 @@ export default function SideNav() {
       icon: <SearchIcon width={'1.3rem'} height={'1.3rem'} />,
       title: 'Search',
       content: <SearchNavContent />,
+    },
+    {
+      id: 6,
+      icon: (
+        <TableIcon
+          width={'1.6rem'}
+          height={'1.6rem'}
+          stroke={pathname.includes('/table') ? '#ffffff' : '#D6D6D6'}
+        />
+      ),
+      title: 'Table',
+      href: '/table',
     },
   ];
 
